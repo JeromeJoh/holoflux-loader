@@ -1,0 +1,19 @@
+.exit-fade-out {
+  animation: fadeOut 0.4s ease forwards;
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.exit-scale-shrink {
+  animation: shrink 0.4s ease forwards;
+}
+@keyframes shrink {
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}

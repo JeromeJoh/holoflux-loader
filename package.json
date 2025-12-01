@@ -16,9 +16,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:dts": "tsc --emitDeclarationOnly --outDir dist/types",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^7.2.6"
+    "vite": "^7.2.6",
+    "vite-plugin-string": "^1.2.3"
   }
 }
