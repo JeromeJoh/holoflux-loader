@@ -12,6 +12,7 @@ export class HolofluxLoader extends HTMLElement {
   shadow: ShadowRoot
   progress = 0
   options: LoaderOptions
+  $overlay: HTMLElement
 
   constructor() {
     super()
@@ -40,6 +41,9 @@ export class HolofluxLoader extends HTMLElement {
 
   connectedCallback() {
     listenLoaderEvents(this)
+    this.$overlay = this.shadowRoot.querySelector('.overlay')
+    this.classList.add('ready')
+    console.log(11111111111, this.$overlay)
   }
 
   setProgress(value: number) {
@@ -55,6 +59,6 @@ export class HolofluxLoader extends HTMLElement {
   }
 
   hide() {
-    runExitAnimation(this)
+    runExitAnimation(this.$overlay)
   }
 }

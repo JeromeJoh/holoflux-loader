@@ -1,12 +1,18 @@
 export function runExitAnimation(loader: HTMLElement) {
-  const anim = loader.getAttribute('exit-animation') || 'fade-out'
-  loader.classList.add(`exit-${anim}`)
+  loader.classList.add(`exit-fade-out`)
+
+  const anim = loader.animate([{ opacity: 1 }, { opacity: 0 }], {
+    duration: 2000,
+    easing: 'ease-in',
+  })
+
+  anim.onfinish = () => loader.classList.add('hidden')
 
   loader.addEventListener(
     'animationend',
     () => {
-      loader.classList.add('hidden')
-      loader.classList.remove(`exit-${anim}`)
+      // loader.classList.remove(`exit-${anim}`)
+      console.log('animationend hook')
     },
     { once: true }
   )
