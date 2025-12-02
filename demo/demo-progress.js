@@ -2,7 +2,7 @@ window.dispatchEvent(new CustomEvent("hololoader:show"));
 
 let p = 0;
 let timer = setInterval(() => {
-  p += 0.02;
+  p += 0.1;
   window.dispatchEvent(
     new CustomEvent("hololoader:progress", { detail: { value: p } })
   );
@@ -10,6 +10,6 @@ let timer = setInterval(() => {
 
   if (p >= 1) {
     clearInterval(timer);
-    // window.dispatchEvent(new CustomEvent("hololoader:hide"));
+    window.dispatchEvent(new CustomEvent("hololoader:hide"));
   }
 }, 80);

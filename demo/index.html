@@ -10,10 +10,13 @@
     type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="dist/holoflux-loader.css">
 </head>
 
 <body>
+  <!-- <script type="module" src="dist/holoflux-loader.es.js"></script> -->
+  <script type="module">
+    import '../src/index.ts';
+  </script>
   <holoflux-loader edge-progress exit-animation="fade-out">
     <div slot="top-left">Logo</div>
     <div slot="bottom-right" id="percent">0%</div>
@@ -26,8 +29,7 @@
   <footer>
     Footer
   </footer>
-  <script type="module" src="dist/holoflux-loader.es.js"></script>
-  <script src="./demo-progress.js"></script>
+  <script src="./demo-progress.js" defer></script>
 </body>
 
 </html>
