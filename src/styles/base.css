@@ -1,5 +1,6 @@
-:host(:not(.ready)) slot {
-  display: none;
+:host {
+  --inner-offset: min(8vw, 8vh);
+  box-sizing: border-box;
 }
 
 .overlay {
@@ -10,6 +11,7 @@
   align-items: center;
   justify-content: center;
   color: white;
+  /* border: solid 2px red; */
 }
 
 .hidden {
