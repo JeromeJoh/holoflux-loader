@@ -52,7 +52,7 @@ export class HolofluxLoader extends HTMLElement {
   }
 
   show() {
-    this.classList.remove('hidden')
+    this.$overlay.classList.remove('hidden')
   }
 
   hide() {
