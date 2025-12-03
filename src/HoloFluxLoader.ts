@@ -20,13 +20,8 @@ export class HolofluxLoader extends HTMLElement {
     this.options = parseOptions(this)
     this.shadow.innerHTML = `
       <style>${base}${anim}${slots}${edges}</style>
-      <div class="overlay ${this.options.edgeProgress ? '' : 'no-edges'}">
-        
-        <div class="edge top"></div>
-        <div class="edge right"></div>
-        <div class="edge bottom"></div>
-        <div class="edge left"></div>
-
+      <div class="overlay ${this.options.edgeProgress}"> 
+        <div class="edge ${this.options.edgeProgress}"></div>
         <slot name="top-left"></slot>
         <slot name="top-right"></slot>
         <slot name="bottom-left"></slot>

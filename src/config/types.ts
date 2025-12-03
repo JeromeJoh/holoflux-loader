@@ -1,3 +1,3 @@
 export interface LoaderOptions {
-  edgeProgress: boolean
+  edgeProgress: string
 }
