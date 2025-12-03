@@ -4,7 +4,7 @@
   --primary-color: #007bff;
   --secondary-color: #6c757d;
 
-  font-family: 'Markazi Text', snas-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 holoflux-loader:not(:defined) {
@@ -33,4 +33,8 @@ footer {
 
 main {
   flex: 1;
+}
+
+#percent {
+  font-size: 2rem;
 }
