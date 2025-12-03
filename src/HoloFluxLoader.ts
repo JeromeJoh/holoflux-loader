@@ -39,7 +39,8 @@ export class HolofluxLoader extends HTMLElement {
     listenLoaderEvents(this)
     this.$overlay = this.shadowRoot.querySelector('.overlay')
     this.classList.add('ready')
-    console.log(11111111111, this.$overlay)
+    this.style.setProperty('--bg-color', this.options.bgColor)
+    this.style.setProperty('--fg-color', this.options.fgColor)
   }
 
   setProgress(value: number) {
