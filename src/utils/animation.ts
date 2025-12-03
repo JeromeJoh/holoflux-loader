@@ -1,8 +1,9 @@
 export function runExitAnimation(loader: HTMLElement) {
-  loader.classList.add(`exit-fade-out`)
+  // loader.classList.add(`exit-fade-out`)
 
   const anim = loader.animate([{ opacity: 1 }, { opacity: 0 }], {
-    duration: 2000,
+    delay: 300,
+    duration: 600,
     easing: 'ease-in',
   })
 

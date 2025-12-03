@@ -10,6 +10,6 @@ let timer = setInterval(() => {
 
   if (p >= 1) {
     clearInterval(timer);
-    // window.dispatchEvent(new CustomEvent("hololoader:hide"));
+    window.dispatchEvent(new CustomEvent("hololoader:hide"));
   }
 }, 80);
