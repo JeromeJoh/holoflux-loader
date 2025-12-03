@@ -1,24 +1,26 @@
+.overlay ::slotted(*) {
+  position: absolute;
+}
+
 ::slotted([slot='top-left']) {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 100;
+  top: var(--inner-offset);
+  left: var(--inner-offset);
 }
 ::slotted([slot='top-right']) {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 100;
+  top: var(--inner-offset);
+  right: var(--inner-offset);
 }
 ::slotted([slot='bottom-left']) {
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
-  z-index: 100;
+  bottom: var(--inner-offset);
+  left: var(--inner-offset);
 }
 ::slotted([slot='bottom-right']) {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 100;
+  bottom: var(--inner-offset);
+  right: var(--inner-offset);
+}
+
+::slotted([slot='spotlight']) {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 50%);
 }
