@@ -11,7 +11,7 @@ export function runExitAnimation(loader: HTMLElement) {
   loader.addEventListener(
     'animationend',
     () => {
-      // loader.classList.remove(`exit-${anim}`)
+      loader.classList.remove(`exit-fade-out`)
       console.log('animationend hook')
     },
     { once: true }
