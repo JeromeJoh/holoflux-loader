@@ -27,10 +27,6 @@ export class HolofluxLoader extends HTMLElement {
         <slot name="bottom-left"></slot>
         <slot name="bottom-right"></slot>
         <slot name="spotlight"></slot>
-
-        <div class="loader-core">
-          <slot></slot>
-        </div>
       </div>
     `
   }
