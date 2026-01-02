@@ -1,5 +1,13 @@
-export function runExitAnimation(loader: HTMLElement) {
+export async function runExitAnimation(loader: HTMLElement) {
   // loader.classList.add(`exit-fade-out`)
+  //   loader.addEventListener(
+  //   'animationend',
+  //   () => {
+  //     loader.classList.remove(`exit-fade-out`)
+  //     console.log('animationend hook')
+  //   },
+  //   { once: true }
+  // )
 
   const anim = loader.animate([{ opacity: 1 }, { opacity: 0 }], {
     delay: 300,
@@ -7,14 +15,5 @@ export function runExitAnimation(loader: HTMLElement) {
     easing: 'ease-in',
   })
 
-  anim.onfinish = () => loader.classList.add('hidden')
-
-  loader.addEventListener(
-    'animationend',
-    () => {
-      loader.classList.remove(`exit-fade-out`)
-      console.log('animationend hook')
-    },
-    { once: true }
-  )
+  await anim.finished
 }

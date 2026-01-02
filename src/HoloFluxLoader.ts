@@ -48,10 +48,11 @@ export class HolofluxLoader extends HTMLElement {
   }
 
   show() {
-    this.$overlay.classList.remove('hidden')
+    this.setAttribute('loading', '')
   }
 
-  hide() {
-    runExitAnimation(this.$overlay)
+  async hide() {
+    await runExitAnimation(this.$overlay)
+    this.removeAttribute('loading')
   }
 }
