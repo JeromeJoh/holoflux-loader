@@ -182,11 +182,35 @@ Example (inline):
   </div>
 
   <style>
-    .hf-bars-loader{display:flex;gap:8px;align-items:center;justify-content:center}
-    .hf-bars-loader .bar{width:6px;height:24px;background:var(--loader-fg,#4ea1ff);animation:hf-bar 0.8s ease-in-out infinite}
-    .hf-bars-loader .bar:nth-child(2){animation-delay:0.1s}
-    .hf-bars-loader .bar:nth-child(3){animation-delay:0.2s}
-    @keyframes hf-bar{0%,100%{transform:scaleY(0.4);opacity:0.6}50%{transform:scaleY(1);opacity:1}}
+    .hf-bars-loader {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+    .hf-bars-loader .bar {
+      width: 6px;
+      height: 24px;
+      background: var(--loader-fg, #4ea1ff);
+      animation: hf-bar 0.8s ease-in-out infinite;
+    }
+    .hf-bars-loader .bar:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    .hf-bars-loader .bar:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    @keyframes hf-bar {
+      0%,
+      100% {
+        transform: scaleY(0.4);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
   </style>
 </holoflux-loader>
 ```
@@ -202,11 +226,37 @@ Example (dots/pulse):
   </div>
 
   <style>
-    .hf-dots-loader{display:flex;gap:8px;align-items:center;justify-content:center}
-    .hf-dots-loader .dot{width:12px;height:12px;border-radius:50%;background:var(--loader-fg,#4ea1ff);animation:hf-dot 0.8s infinite ease-in-out}
-    .hf-dots-loader .dot:nth-child(2){animation-delay:0.12s}
-    .hf-dots-loader .dot:nth-child(3){animation-delay:0.24s}
-    @keyframes hf-dot{0%,80%,100%{transform:translateY(0);opacity:0.6}40%{transform:translateY(-10px);opacity:1}}
+    .hf-dots-loader {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+    .hf-dots-loader .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--loader-fg, #4ea1ff);
+      animation: hf-dot 0.8s infinite ease-in-out;
+    }
+    .hf-dots-loader .dot:nth-child(2) {
+      animation-delay: 0.12s;
+    }
+    .hf-dots-loader .dot:nth-child(3) {
+      animation-delay: 0.24s;
+    }
+    @keyframes hf-dot {
+      0%,
+      80%,
+      100% {
+        transform: translateY(0);
+        opacity: 0.6;
+      }
+      40% {
+        transform: translateY(-10px);
+        opacity: 1;
+      }
+    }
   </style>
 </holoflux-loader>
 ```
@@ -226,10 +276,13 @@ export const BarsLoader = `
 `
 
 // usage
-document.querySelector('holoflux-loader')?.insertAdjacentHTML('beforeend', BarsLoader)
+document
+  .querySelector('holoflux-loader')
+  ?.insertAdjacentHTML('beforeend', BarsLoader)
 ```
 
 > Notes:
+>
 > - Both snippets use `--loader-fg` (falls back to `#4ea1ff`) so you can theme them via the component: `holoflux-loader{ --loader-fg: #00eaff }`.
 > - These are simple, permissive examples intended for copying and customization. See the original inspiration and more variants here:
 >   - https://css-loaders.com/bars/
