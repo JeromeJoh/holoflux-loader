@@ -158,6 +158,85 @@ HolofluxLoader provides five flexible slots for inserting UI components.
 | bottom-right | Bottom-right | Action buttons, indicators |
 | spotlight    | Center       | Custom loader animation    |
 
+---
+
+## Slot Loaders (example module) 🎛️
+
+You can place lightweight CSS-only loaders into the `spotlight` slot. Below are two copy-paste-ready examples (small, accessible, and themeable via `--loader-fg`). They are adapted from popular sources for inspiration:
+
+- Bars loader (inspired by https://css-loaders.com/bars/)
+- Dots / pulse loader (inspired by examples on https://uiverse.io/loaders)
+
+### How to use
+
+Insert the HTML + CSS into the `spotlight` slot of your `holoflux-loader` instance. You can inline them directly or keep them in a small module file and import/insert programmatically.
+
+Example (inline):
+
+```html
+<holoflux-loader>
+  <div slot="spotlight" class="hf-bars-loader" aria-hidden="true">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <style>
+    .hf-bars-loader{display:flex;gap:8px;align-items:center;justify-content:center}
+    .hf-bars-loader .bar{width:6px;height:24px;background:var(--loader-fg,#4ea1ff);animation:hf-bar 0.8s ease-in-out infinite}
+    .hf-bars-loader .bar:nth-child(2){animation-delay:0.1s}
+    .hf-bars-loader .bar:nth-child(3){animation-delay:0.2s}
+    @keyframes hf-bar{0%,100%{transform:scaleY(0.4);opacity:0.6}50%{transform:scaleY(1);opacity:1}}
+  </style>
+</holoflux-loader>
+```
+
+Example (dots/pulse):
+
+```html
+<holoflux-loader>
+  <div slot="spotlight" class="hf-dots-loader" aria-hidden="true">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <style>
+    .hf-dots-loader{display:flex;gap:8px;align-items:center;justify-content:center}
+    .hf-dots-loader .dot{width:12px;height:12px;border-radius:50%;background:var(--loader-fg,#4ea1ff);animation:hf-dot 0.8s infinite ease-in-out}
+    .hf-dots-loader .dot:nth-child(2){animation-delay:0.12s}
+    .hf-dots-loader .dot:nth-child(3){animation-delay:0.24s}
+    @keyframes hf-dot{0%,80%,100%{transform:translateY(0);opacity:0.6}40%{transform:translateY(-10px);opacity:1}}
+  </style>
+</holoflux-loader>
+```
+
+### As a small module
+
+Create `src/loaders/spotlight-loaders.ts` and export template strings, then insert into the DOM when needed.
+
+```ts
+export const BarsLoader = `
+<div slot="spotlight" class="hf-bars-loader" aria-hidden="true">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+<style>/* copy CSS from above */</style>
+`
+
+// usage
+document.querySelector('holoflux-loader')?.insertAdjacentHTML('beforeend', BarsLoader)
+```
+
+> Notes:
+> - Both snippets use `--loader-fg` (falls back to `#4ea1ff`) so you can theme them via the component: `holoflux-loader{ --loader-fg: #00eaff }`.
+> - These are simple, permissive examples intended for copying and customization. See the original inspiration and more variants here:
+>   - https://css-loaders.com/bars/
+>   - https://uiverse.io/loaders
+
+---
+
 ## Custom Events (API)
 
 HolofluxLoader is controlled fully via `window`-dispatched CustomEvents.

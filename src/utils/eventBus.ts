@@ -6,4 +6,5 @@ export function listenLoaderEvents(loader: HolofluxLoader) {
   window.addEventListener('hololoader:progress', (e: any) => {
     loader.setProgress(e.detail.value)
   })
+  console.log('Loader event bus initialized')
 }
