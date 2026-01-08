@@ -1,4 +1,4 @@
-import { HolofluxLoader } from '@/HolofluxLoader'
+import type { HolofluxLoader } from '@/HoloFluxLoader'
 
 export function listenLoaderEvents(loader: HolofluxLoader) {
   window.addEventListener('hololoader:show', () => loader.show())

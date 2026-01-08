@@ -1,7 +1,7 @@
-import { HolofluxLoader } from '@/HolofluxLoader'
+import { HolofluxLoader } from '@/HoloFluxLoader'
 
 if (!customElements.get('holoflux-loader')) {
   customElements.define('holoflux-loader', HolofluxLoader)
 }
 
-export * from '@/HolofluxLoader'
+export * from '@/HoloFluxLoader'
