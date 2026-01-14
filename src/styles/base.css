@@ -1,4 +1,5 @@
 :host {
+  contain: content;
   display: none;
   --inner-offset: min(8vw, 8vh);
   box-sizing: border-box;
